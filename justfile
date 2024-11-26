@@ -33,7 +33,7 @@ _default:
 # full build
 build:
     npm install
-    npm run lint
+    npm run build
 
 # utility to generate QR
 generate-qrs +urls:
