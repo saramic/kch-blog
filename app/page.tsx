@@ -1,12 +1,7 @@
-import "bulma/css/bulma.min.css";
-import Header from "./header";
-import Footer from "./footer";
 import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className="container hero is-fullheight">
-      <Header />
       <div className="columns">
         <div className="column"/>
         <div className="column is-one-quarter">
@@ -30,7 +25,5 @@ export default function Page() {
         </div>
         <div className="column"/>
       </div>
-      <Footer />
-    </main>
   )
 }

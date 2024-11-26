@@ -1,3 +1,7 @@
+import "../public/styles/main.scss";
+import Header from "./header";
+import Footer from "./footer";
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +9,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+      <main className="container hero is-fullheight">
+        <Header />
+        {children}
+        <Footer />
+        </main>
+      </body>
     </html>
   )
 }

@@ -1,0 +1,17 @@
+// Path to Bulma's sass folder
+@use "bulma/sass" with (
+  // $family-primary: '"Nunito", sans-serif',
+  // $grey-dark: $brown,
+  // $grey-light: $beige-light,
+  $primary: #0fbc55,
+  $link: #1063c2,
+  // $control-border-width: 2px,
+  // $input-shadow: none
+);
+
+// Import the Google Font
+// @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+@import "bulma/bulma.scss";
+
+@import "bulma/sass/utilities/mixins";
