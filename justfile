@@ -34,3 +34,11 @@ _default:
 build:
     npm install
     npm run lint
+
+# utility to generate QR
+generate-qrs +urls:
+    bin/generate_qrs.rb {{urls}}
+
+# clean up 🧹
+clean:
+    rm -rf tmp
