@@ -28,6 +28,9 @@ export default async function Page({
     "D2918761-2ED6-4250-9A49-753AF9688E73": <>
       <div>lat,long:</div><a href="https://google.com/maps/search/-37.956188, 145.240308">-37.956188, 145.240308</a>
     </>, // historical marker
+    "C851222D-5D8A-4919-9E1D-D8F972AD6012": <>
+      <div>lat,long:</div><a href="https://google.com/maps/search/-37.943525, 145.230501">-37.943525, 145.230501</a>
+    </>, // Shed near oval
     "69536812-B4BE-4264-9E9C-5E681D021814": <>
       <div>lat,long:</div><a href="https://google.com/maps/search/-37.943720, 145.244219">-37.943720, 145.244219</a>
     </>, // start north boundary track
