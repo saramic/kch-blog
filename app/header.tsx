@@ -6,7 +6,7 @@ export default function Header() {
       <section className="hero">
         <div className="hero-body">
         <Link href="/">
-          <h2 className="title">Komędant Chorągwi Harcerzy</h2>
+          <h2 className="title">Komendant Chorągwi Harcerzy</h2>
           </Link>
         </div>
       </section>
