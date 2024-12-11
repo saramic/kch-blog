@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -17,6 +18,9 @@ export default function Page() {
                 <ul>
                   <li>
                     <a href="https://www.zhp.org.au/">ZHP Australia main page</a>
+                  </li>
+                  <li>
+                    <Link href="/calendar">️📅 Calendar</Link>
                   </li>
                 </ul>
               </div>
