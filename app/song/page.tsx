@@ -15,7 +15,7 @@ type Verse = {
 };
 type Song = {
   title: string;
-  rehearsalAudioUrl: string | null;
+  rehearsalAudioUrls: string[];
   audioUrl: string | null;
   info: Record<string, string>;
   verses: Verse[];
@@ -23,9 +23,12 @@ type Song = {
 
 const songsData = [
   {
-    title: "Jak dobrze nam bracia skauci",
-    rehearsalAudioUrl:
+    title: "Jak Dobrze Nam – Bracia Skauci",
+    rehearsalAudioUrls: [
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250816_proba_01_jak_dobrze_nam_bracia_skaucki.mp3",
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250809_proba_01_jak_dobrze_nam_bracia_skaucki.mp3",
       "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250726_proba_01_jak_dobrze_nam_bracia_skauci.mp3",
+    ],
     audioUrl: null,
     info: {
       Gatunek: "Pieśń harcerska",
@@ -43,42 +46,44 @@ const songsData = [
       },
       {
         type: "verse" as const,
-        lines: [
-          "<harc 1 & 2>",
-          "Jak dobrze nam zdobywać góry",
-          "I młodą piersią chłonąć wiatr,",
-          "Prężnymi stopy deptać chmury",
-          "I palce ranić o szczyt Tatr!",
-        ],
-        chords: [[""], ["a", "d"], ["E7", "a"], ["a", "d"], ["E7", "a"]],
-      },
-      {
-        type: "verse" as const,
-        lines: [
-          "Mieć w uszach szum, strumieni śpiew,",
-          "A w żyłach roztętnioną krew. (bis)",
-        ],
-        chords: [
-          ["a", "d"],
-          ["E", "a"],
-        ],
+        lines: ["<harc 1 & 2>", "Jak dobrze nam zdobywać góry"],
+        chords: [[""], ["a", "d"]],
       },
       {
         type: "dialogue" as const,
         lines: [
           "[everyone] chór enters from sides and joins in",
-          "[harc 3] Wszyscy razem",
+          "[music] D minor chord from last line 'd'",
+        ],
+      },
+      {
+        type: "verse" as const,
+        lines: [
+          "I młodą piersią chłonąć wiatr,",
+          "Prężnymi stopy deptać chmury",
+          "I palce ranić o szczyt Tatr!",
+        ],
+        chords: [
+          ["E7", "a"],
+          ["a", "d"],
+          ["E7", "a"],
         ],
       },
       {
         type: "chorus" as const,
         lines: [
+          "Mieć w uszach szum, strumieni śpiew,",
+          "A w żyłach roztętnioną krew. (bis)",
+          "",
           "Hejże hej! Hejże ha!",
           "Żyjmy więc, póki czas,",
           "Bo kto wie, bo kto zna,",
           "Kiedy znowu ujrzym was! [only 1x]",
         ],
         chords: [
+          ["a", "d"],
+          ["E", "a"],
+          [],
           ["a", "E"],
           ["E", "a"],
           ["a", "d"],
@@ -87,13 +92,15 @@ const songsData = [
       },
       {
         type: "dialogue" as const,
-        lines: ["[Harc 2] Ale fajna polana na obóz"],
+        lines: [
+          "[Harc 2] Ale fajna polana na obóz",
+          "[As we song] bring out prop fire, tent and maybe flag pole",
+        ],
       },
       {
         type: "verse" as const,
         lines: [
           "[bracia skauci]",
-          "[bring out prop fire and tent maybe flag pole]",
           "W lesie cudna jest polana,",
           "Hufiec rozkaz stanąć ma,",
           "Wnet ogniska rozpalamy,",
@@ -102,8 +109,7 @@ const songsData = [
           "A jest ich czterdzieści dwa.",
         ],
         chords: [
-          [""],
-          [""],
+          [],
           ["A", "E"],
           ["E", "A"],
           ["A7", "D"],
@@ -116,8 +122,11 @@ const songsData = [
   },
   {
     title: "Płonie ognisko w lesie",
-    rehearsalAudioUrl:
+    rehearsalAudioUrls: [
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250816_proba_02_plonie_ognisko_w_lesie.mp3",
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250809_proba_02_plonie_ognisko_w_lesie.mp3",
       "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250726_proba_02_plonie_ognisko_w_lesie.mp3",
+    ],
     audioUrl: null,
     info: {
       Struktura: "Śpiewane 2 razy przez wszystkie głosy",
@@ -131,10 +140,11 @@ const songsData = [
         type: "multi-part-timing",
         lines: [
           "🎵 Struktura 3-głosowego kanonu:",
-          "• Część 1 zaczyna",
-          "• Część 2 dołącza gdy Część 1 śpiewa linię 3",
-          "• Część 3 dołącza gdy Część 1 śpiewa refren",
-          "• Wszystkie części śpiewają 2 razy przez cały utwór",
+          "• All together once through",
+          "• Second time as follows",
+          "&nbsp;&nbsp; • Część 1 zaczyna - sing once and the verse a 2nd time",
+          "&nbsp;&nbsp; • Część 2 once through - when 1 is Przy ogniu...",
+          "&nbsp;&nbsp; • Część 3 once through - when 1 is Czuj or 2 is Przy...",
         ],
       },
       {
@@ -171,8 +181,11 @@ const songsData = [
   },
   {
     title: "Chusta, chusta, chusta",
-    rehearsalAudioUrl:
+    rehearsalAudioUrls: [
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250816_proba_03_chusta_chusta_chusta.mp3",
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250809_proba_03_chusta_chusta_chusta.mp3",
       "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250726_proba_03_chusta_chusta_chusta.mp3",
+    ],
     audioUrl: null,
     info: {
       Gatunek: "Pieśń harcerska",
@@ -197,13 +210,7 @@ const songsData = [
           "Już siedemdziesiąt pięć lat,",
           "Harcerze tutaj są!",
         ],
-        chords: [
-          [""],
-          ["C", "C", "|", "C", "G7", "C"],
-          ["C", "G7", "|", "C", "G7"],
-          ["G7", "G7", "|", "d", "A7", "d"],
-          ["G7", "C", "|", "G7", "C"],
-        ],
+        chords: [[], ["C", "C"], ["C", "G7"], ["G7", "G7"], ["G7", "C"]],
       },
       {
         type: "refrain",
@@ -214,10 +221,10 @@ const songsData = [
           "Harcerze tutaj są!",
         ],
         chords: [
-          ["C", "C", "|", "C"],
-          ["C", "G7", "|", "G7"],
-          ["G7", "G7", "|", "G7", "d"],
-          ["G7", "C", "|", "G7", "C"],
+          ["C", "C"],
+          ["C", "G7"],
+          ["G7", "G7"],
+          ["G7", "C"],
         ],
       },
       {
@@ -263,6 +270,9 @@ const songsData = [
           "<3rd group Boys>",
           "Druh — mapy gubi",
           "Druh — zawsze błądzi!",
+          "[second time]",
+          "Druh — mapy gubi",
+          "Druh — zawsze błądzi!",
         ],
       },
       {
@@ -273,10 +283,6 @@ const songsData = [
         ],
       },
       {
-        type: "multi-part-simultaneous",
-        lines: ["🎵 [all at the same time] 🎵"],
-      },
-      {
         type: "verse",
         lines: [
           "[everybody]",
@@ -285,6 +291,10 @@ const songsData = [
           "Już siedemdziesiąt pięć lat,",
           "Harcerze tutaj są!",
         ],
+      },
+      {
+        type: "multi-part-simultaneous",
+        lines: ["🎵 [sing below parts 2 times] 🎵"],
       },
       {
         type: "multi-part",
@@ -321,12 +331,18 @@ const songsData = [
         ],
       },
       {
+        type: "multi-part-simultaneous",
+        lines: ["🛑 [EVERYONE STOP] 🛑"],
+      },
+      {
         type: "verse",
         lines: [
-          "[EVERHONE STOP]",
-          "[harcerz 3 continues solo]",
+          "[harc 3 continues solo]",
           "Druhno Basiu, lubimy Cię,",
           "Przy ognisku, przytulę",
+          "&nbsp;&nbsp; [harcerz 3 continues solo cutting off]",
+          "&nbsp;&nbsp; Druhno Basiu, lubimy Cię,",
+          "&nbsp;&nbsp; Przy ognisku, przytulę",
         ],
       },
       {
@@ -337,19 +353,8 @@ const songsData = [
         ],
       },
       {
-        type: "verse",
-        lines: [
-          "[harcerz 3 continues solo cutting off]",
-          "Druhno Basiu, lubimy Cię,",
-          "Przy ognisku, przytulę",
-        ],
-      },
-      {
         type: "multi-part-simultaneous",
-        lines: [
-          "🎵 [all at the same time - one last time] 🎵",
-          "first time all together normal, second time key change",
-        ],
+        lines: ["🎵 [all at the same time - one last time] 🎵"],
       },
       {
         type: "verse",
@@ -395,15 +400,35 @@ const songsData = [
           "Przy ognisku, przytulę",
         ],
       },
+      {
+        type: "verse",
+        lines: [
+          "[everybody and key change]",
+          "O, chusto, chusto, chusto",
+          "W Australii ja ją mam,",
+          "Już siedemdziesiąt pięć lat,",
+          "Harcerze tutaj są!",
+        ],
+      },
     ],
   },
   {
     title: "Góralskie Tango",
-    rehearsalAudioUrl:
+    rehearsalAudioUrls: [
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250816_proba_04_goralskie_tango.mp3",
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250809_proba_04_goralskie_tango.mp3",
       "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250726_proba_04_goralskie_tango.mp3",
+    ],
     audioUrl: null, // No main recording yet
     info: {},
     verses: [
+      {
+        type: "dialogue",
+        lines: [
+          "[harc 4]",
+          "My harcerze z Podhala - wy górale, my górale a tera' Góralskie Tango",
+        ],
+      },
       {
         type: "verse",
         lines: [
@@ -488,8 +513,11 @@ const songsData = [
   },
   {
     title: "Maszeruje Podhale",
-    rehearsalAudioUrl:
+    rehearsalAudioUrls: [
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250816_proba_05_maszeruje_podhale.mp3",
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250809_proba_05_maszeruje_podhale.mp3",
       "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20250726_proba_05_maszeruje_podhale.mp3",
+    ],
     audioUrl:
       "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/Maszeruje+Podhale.mp3",
     info: {
@@ -500,18 +528,27 @@ const songsData = [
     },
     verses: [
       {
+        type: "dialogue",
+        lines: [
+          "[harc 3]",
+          "Harcerstwo Podhala z Melbourne, juź maszeruje 75 lat, a tu nasza piosenka",
+        ],
+      },
+      {
         type: "verse",
         lines: [
+          "",
           "Maszeruje &ldquo;Podhale&rdquo;, maszeruje",
           "Maszeruje drogami wzdłuż i w szerz",
           "I z piosenką na ustach powędruje",
           "Do rodaków rozsianych tutaj rzesz",
         ],
         chords: [
-          ["G (capo 5th fret) | F"],
+          ["C – D – G"],
+          ["G | F or G capo 5th to drop"],
           ["G"],
-          ["a (capo 5th fret) | a"],
-          ["a"],
+          ["a | d"],
+          ["D", "G", "|"],
         ],
       },
       {
@@ -547,7 +584,7 @@ const songsData = [
           "By w Australii o Kraju głosić wieści",
           "Bo w piosence ukryty urok jest",
         ],
-        chords: [["F"], ["F"], ["g"], ["g"]],
+        chords: [["G"], ["G"], ["a"], ["D", "G"]],
       },
       {
         type: "verse",
@@ -557,7 +594,7 @@ const songsData = [
           "I z piosenką na ustach powędruje",
           "Do rodaków rozsianych tutaj rzesz",
         ],
-        chords: [["F"], ["F"], ["g"], ["g"]],
+        chords: [["G"], ["G"], ["a"], ["D", "G"]],
       },
       {
         type: "refrain",
@@ -572,6 +609,18 @@ const songsData = [
           ["C", "G"],
           ["C", "G"],
           ["C", "-", "C", "-", "D", "-", "G"],
+        ],
+      },
+      {
+        type: "dialogue",
+        lines: ["[harc 3]", "Lewo zwrot - naprzód marsz"],
+      },
+      {
+        type: "refrain",
+        lines: [
+          "[marching to]",
+          "Lewa, lewa, Podhale w Melbourne śpiewa!",
+          "Lewa, lewa, Podhale w Melbourne śpiewa!",
         ],
       },
     ],
@@ -743,6 +792,17 @@ export default async function Page() {
     );
   };
 
+  const songDateFromName = (songUrl: string): string => {
+    const match = songUrl.match(/20\d{6}/);
+    const [year, month, day] = [
+      match[0].slice(0, 4),
+      match[0].slice(4, 6),
+      match[0].slice(6, 8),
+    ];
+    const date = new Date(`${year}-${month}-${day}`);
+    return date.toDateString();
+  };
+
   const renderSong = (song: Song, songIndex: number) => {
     return (
       <div
@@ -753,20 +813,20 @@ export default async function Page() {
         <h3 className="subtitle is-5">{song.title}</h3>
 
         {/* Rehearsal Audio */}
-        {song.rehearsalAudioUrl && (
-          <div className="media-player" style={{ marginBottom: "1rem" }}>
+        {song.rehearsalAudioUrls.map((rehearsalAudioUrl) => (
+          <div key={rehearsalAudioUrl} className="media-player" style={{ marginBottom: "1rem" }}>
             <p
               className="has-text-weight-semibold"
               style={{ fontSize: "0.9rem", marginBottom: "0.5rem" }}
             >
-              🎵 Nagranie z próby:
+              🎵 Nagranie z próby: {songDateFromName(rehearsalAudioUrl)}
             </p>
             <audio controls className="audio-player" style={{ width: "100%" }}>
-              <source src={song.rehearsalAudioUrl} type="audio/mpeg" />
+              <source src={rehearsalAudioUrl} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           </div>
-        )}
+        ))}
 
         {/* Main Audio */}
         {song.audioUrl && (
@@ -797,14 +857,13 @@ export default async function Page() {
               ))}
             </div>
           )}
-
-          {/* Lyrics */}
-          <div className="lyrics" style={{ marginTop: "2rem" }}>
-            <h4 className="title is-6">Tekst piosenki</h4>
-            {song.verses.map((verse: Verse, index: number) =>
-              renderVerse(verse, index)
-            )}
-          </div>
+        </div>
+        {/* Lyrics */}
+        <div className="lyrics" style={{ marginTop: "2rem" }}>
+          <h4 className="title is-6">Tekst piosenki</h4>
+          {song.verses.map((verse: Verse, index: number) =>
+            renderVerse(verse, index)
+          )}
         </div>
       </div>
     );
@@ -820,8 +879,7 @@ export default async function Page() {
 
             {/* Songs with lyrics */}
             <div style={{ marginTop: "2rem" }}>
-              {songsData
-                .map((song, index) => renderSong(song, index))}
+              {songsData.map((song, index) => renderSong(song, index))}
             </div>
           </div>
         </div>
