@@ -17,6 +17,7 @@ type Song = {
   title: string;
   rehearsalAudioUrls: string[];
   audioUrl: string | null;
+  youtubeLink?: string;
   info: Record<string, string>;
   verses: Verse[];
 };
@@ -625,6 +626,133 @@ const songsData = [
       },
     ],
   },
+  {
+    title: "Królowie Świata",
+    rehearsalAudioUrls: [],
+    audioUrl:
+      "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/krolowie_swiata.mp3",
+    youtubeLink: "https://youtu.be/BH8yLWPvIXo",
+    info: {
+      Pieśń: "Królowie Świata",
+    },
+    verses: [
+      {
+        type: "verse",
+        lines: [
+          "[Kamil]",
+          "Królowie świata sięgają gwiazd",
+          "Najpotężniejsi ci panowie miast",
+          "Nie wiedzą, że inaczej widać ich stąd",
+          "Dla nas głupcami, a nie królami są",
+        ],
+      },
+      {
+        type: "verse",
+        lines: [
+          "[Tomek]",
+          "Królowie świata robią co chcą",
+          "Żyją w pałacach lecz nie cieszy ich to",
+          "Zbyt dawno już osiągnęli swój cel",
+          "Od lat tak samo mija im każdy dzień",
+        ],
+      },
+      {
+        type: "refrain",
+        lines: [
+          "[All cast]",
+          "A my żyjemy każdą chwila",
+          "Życiem naszym taniec, miłość,",
+          "Nie umiemy być ostrożni,",
+          "Mamy prawo szukać, błądzić",
+          "Chcemy brać co los nam daje",
+          "Wciąż nie rezygnując z marzeń",
+          "Wolno nam żyć tak, jak chcemy",
+          "Wolno, bo to my jesteśmy…",
+        ],
+      },
+      {
+        type: "verse",
+        lines: [
+          "[Sammer]",
+          "Królami świata rządzi dziś strach",
+          "Bo gubią się we własnych sidłach i grach",
+          "W walce o to, by wciąż zajmować sam szczyt",
+          "Budują mur, by ukryć ból swój i wstyd",
+        ],
+      },
+      {
+        type: "verse",
+        lines: [
+          "[Sylwia i Ania]",
+          "Królowie świata - smutny wasz los (Smutny wasz los)",
+          "To wasza wojna, bawcie sami się w nią, (Bawcie się w nią)",
+          "Skończcie ten cyrk, nigdy nie bawił nas on",
+          "Każdy z nas wie, że zazdrościcie nam bo…",
+        ],
+      },
+      {
+        type: "refrain",
+        lines: [
+          "[All cast]",
+          "To my żyjemy każdą chwila",
+          "Życiem naszym taniec, miłość,",
+          "Nie umiemy być ostrożni,",
+          "Mamy prawo szukać, błądzić",
+          "Chcemy brać co los nam daje",
+          "Wciąż nie rezygnując z marzeń",
+          "Wolno nam żyć tak, jak chcemy",
+          "Wolno, bo to my jesteśmy…",
+        ],
+      },
+      {
+        type: "verse",
+        lines: ["[Sammer]", "Wstawak voc"],
+      },
+      {
+        type: "refrain",
+        lines: [
+          "[All cast + Sylwia Wstawki Voc.]",
+          "My żyjemy każdą chwila",
+          "(To my jesteśmy) Życiem naszym taniec, miłość,",
+          "Nie umiemy być ostrożni,",
+          "(Królami świata) Mamy prawo szukać, błądzić",
+          "Chcemy brać co los nam daje",
+          "Wciąż nie rezygnując z marzeń (Królami świata)",
+          "Wolno nam żyć tak, jak chcemy",
+          "Wolno, bo to my jesteśmy…",
+        ],
+      },
+      {
+        type: "verse",
+        lines: [
+          "[Olivia, Kamil, Tomek, Albert, Łukasz, Sylwia]",
+          "Co los nam dał",
+          "[Ania, Amelia, Wstawki (jestemy) m (my)]",
+          "(Jesteśmy) Co los nam dał",
+          "[Sammer]",
+          "(My) Nie rezygnując z marzeń",
+          "Wolno nam żyć,",
+          "Wolno nam żyć,",
+          "Jak chcemy bo,",
+          "Jesteśmy króloami świata",
+        ],
+      },
+      {
+        type: "refrain",
+        lines: [
+          "[All cast]",
+          "My żyjemy każdą chwila",
+          "Życiem naszym taniec, miłość,",
+          "Nie umiemy być ostrożni,",
+          "Mamy prawo szukać, błądzić",
+          "Chcemy brać co los nam daje",
+          "Wciąż nie rezygnując z marzeń",
+          "Wolno nam żyć tak, jak chcemy",
+          "Wolno, bo to my jesteśmy…",
+        ],
+      },
+    ],
+  },
 ] satisfies Song[];
 
 export default async function Page() {
@@ -814,7 +942,11 @@ export default async function Page() {
 
         {/* Rehearsal Audio */}
         {song.rehearsalAudioUrls.map((rehearsalAudioUrl) => (
-          <div key={rehearsalAudioUrl} className="media-player" style={{ marginBottom: "1rem" }}>
+          <div
+            key={rehearsalAudioUrl}
+            className="media-player"
+            style={{ marginBottom: "1rem" }}
+          >
             <p
               className="has-text-weight-semibold"
               style={{ fontSize: "0.9rem", marginBottom: "0.5rem" }}
@@ -841,6 +973,25 @@ export default async function Page() {
               <source src={song.audioUrl} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
+          </div>
+        )}
+
+        {/* YouTube link */}
+        {song.youtubeLink && (
+          <div className="media-player" style={{ marginBottom: "1rem" }}>
+            <p
+              className="has-text-weight-semibold"
+              style={{ fontSize: "0.9rem", marginBottom: "0.5rem" }}
+            >
+              🎥 Link do YouTube:
+            </p>
+            <a
+              href={song.youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {song.youtubeLink}
+            </a>
           </div>
         )}
 
