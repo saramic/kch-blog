@@ -21,6 +21,8 @@ export default function Page({
     es4: "game/69536812-B4BE-4264-9E9C-5E681D021814",
     f9U: "game/69C8E074-24D7-424E-9E09-A77D6DC3A9D3",
     TNo: "game/A824C319-F53D-4AE8-9C04-2D39D4E7FA3A",
+    chor: "choir",
+    spiew: "song",
   };
   return answers[shortId] ? redirect(answers[shortId]) : redirect("/");
 }
