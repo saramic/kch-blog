@@ -38,9 +38,9 @@ export default function Page() {
                 src={
                   "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/20180907_100_lecie_niepodleglosci/100_years_niepodleglosci_choir_crop.jpg"
                 }
-                alt="alt"
-                width="300"
-                height="200"
+                alt="Performance at 100 years of Polish Independence"
+                width={300}
+                height={117}
               />
             </figure>
           </div>

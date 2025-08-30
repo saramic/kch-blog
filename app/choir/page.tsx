@@ -328,9 +328,39 @@ export default function ChoirBlogPage() {
     );
   }
 
+  // Bio section
+  const bio = `
+The choir is made up of scouts from the Polish Scouting Association in
+Australia, ZHP — young people raised in the spirit of service, friendship,
+and love for their homeland. Polish scouting is built on wilderness skills,
+camps, and campfires, where singing is part of everyday life. From morning to
+night, music unites us, builds community, and spreads joy.
+
+Our songs capture the full spirit of scouting: campfire sing-alongs that
+everyone can join, proud Polish military songs that carry history, and
+playful skits in the lively tradition of Baden-Powell. Each performance
+celebrates youth, energy, and a deep connection to our country of heritage.
+
+This year we proudly mark the 75th anniversary of Polish scouting in
+Australia. For generations, music has been our bridge—linking Poland and
+Australia, past and present, tradition and future. Wherever we perform, from
+campgrounds to national celebrations, our songs carry the heartbeat of
+scouting and the pride of our heritage.`;
+
   return (
     <div className="container" style={{ maxWidth: 700, margin: "2rem auto" }}>
       <h2 className="title is-4">Chór - Wydarzenia i Koncerty</h2>
+      <div
+        style={{
+          margin: "1.5rem 0 2.5rem 0",
+          background: "#f8f8f8",
+          borderRadius: 10,
+          padding: "1.5rem 1.5rem 1.2rem 1.5rem",
+          boxShadow: "0 2px 8px 0 #0001",
+        }}
+      >
+        <ReactMarkdown>{bio}</ReactMarkdown>
+      </div>
       {featured.length > 0 && (
         <div style={{ marginBottom: 32 }}>
           <h3 className="title is-5" style={{ color: "#b71c1c" }}>
