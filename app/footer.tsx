@@ -9,7 +9,7 @@ export default function Footer() {
         </strong>
       </p>
       <small>
-        <span>Copyright @2024</span>
+        <span>Copyright @2025</span>
         <br />
       </small>
     </footer>
