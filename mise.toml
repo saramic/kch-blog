@@ -1,0 +1,30 @@
+[tasks."data-fetch-zhp"]
+description = "fetch zhp"
+run = """
+  wget --recursive \
+    --reject-regex=".*\\.(jpg|jpeg|png|gif|css|js)" \
+    --domains=zhp.org \
+    --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" \
+    --directory-prefix=data \
+    --wait=1 \
+    --random-wait \
+    --timestamping \
+    --continue \
+    https://www.zhp.org/dokumenty/regulaminy-rozkazy
+"""
+
+[tasks."data-fetch-zhpharcerzy"]
+description = "fetch zhp harcerzy"
+run = """
+  wget --recursive \
+    --no-parent \
+    --reject-regex=".*\\.(jpg|jpeg|png|gif|css|js)" \
+    --domains=zhpharcerze.org \
+    --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" \
+    --directory-prefix=data \
+    --wait=1 \
+    --random-wait \
+    --timestamping \
+    --continue \
+    https://www.zhpharcerze.org/dokumenty
+"""
