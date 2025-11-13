@@ -26,6 +26,8 @@ export default function Page({
     whi: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/wedrowanie/We%CC%A8drowanie-WYSOKI_G%C5%81OS.mp3",
     wlo: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/wedrowanie/We%CC%A8drowanie-NISKI_G%C5%81OS.mp3",
     wmel: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/wedrowanie/We%CC%A8drowanie-MELODIA.mp3",
+    jhi: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/jam_wiosenny/Jam_wiosenny-WYSOKI_GLOS.mp3",
+    jmel: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/jam_wiosenny/Jam_wiosenny-MELODIA.mp3",
   };
   return answers[shortId] ? redirect(answers[shortId]) : redirect("/");
 }
