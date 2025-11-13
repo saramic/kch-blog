@@ -23,6 +23,9 @@ export default function Page({
     TNo: "game/A824C319-F53D-4AE8-9C04-2D39D4E7FA3A",
     chor: "choir",
     spiew: "song",
+    whi: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/wedrowanie/We%CC%A8drowanie-WYSOKI_G%C5%81OS.mp3",
+    wlo: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/wedrowanie/We%CC%A8drowanie-NISKI_G%C5%81OS.mp3",
+    wmel: "https://kch-au-site.s3.ap-southeast-2.amazonaws.com/wedrowanie/We%CC%A8drowanie-MELODIA.mp3",
   };
   return answers[shortId] ? redirect(answers[shortId]) : redirect("/");
 }
