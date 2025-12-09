@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 const blogData = [
   {
-    title: "Nasze Polskie Kwiaty",
+    title: "Federation Square Polish Festival",
     date: "16 November 2025",
     featured: true,
     text: `
@@ -20,7 +20,7 @@ const blogData = [
     ],
   },
   {
-    title: "Nasze Polskie Kwiaty",
+    title: "Nasze Polskie Kwiaty – Rowville",
     date: "31 August 2025",
     featured: true,
     text: `
@@ -38,7 +38,7 @@ concert "Nasze Polskie Kwiaty" in the Rowville Polish House.
     ],
   },
   {
-    title: "Nasze Polskie Kwiaty",
+    title: "Nasze Polskie Kwiaty – Albion",
     date: "24 August 2025",
     featured: true,
     text: `
