@@ -5,6 +5,40 @@ import ReactMarkdown from "react-markdown";
 const blogData = [
   {
     title: "Nasze Polskie Kwiaty",
+    date: "16 November 2025",
+    featured: true,
+    text: `
+## Polish Festival at Federeation Square 2025
+### Hufiec Podhale Melbourne
+
+    `,
+    media: [
+      {
+        type: "video",
+        url: "https://youtu.be/sb02taKdZeE",
+      },
+    ],
+  },
+  {
+    title: "Nasze Polskie Kwiaty",
+    date: "31 August 2025",
+    featured: true,
+    text: `
+## Nasze Polskie Kwiaty 2025 – Rowville
+### Hufiec Podhale Melbourne
+
+On the 31st of August, the choir took part in the Melbourne based youth
+concert "Nasze Polskie Kwiaty" in the Rowville Polish House.
+    `,
+    media: [
+      {
+        type: "video",
+        url: "https://youtu.be/QmO3AOdRI_g",
+      },
+    ],
+  },
+  {
+    title: "Nasze Polskie Kwiaty",
     date: "24 August 2025",
     featured: true,
     text: `
