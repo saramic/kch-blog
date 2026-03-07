@@ -22,7 +22,7 @@
     "react-organizational-chart": "^2.2.1"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.8.1",
+    "@netlify/plugin-nextjs": "^5.15.8",
     "@types/node": "22.10.0",
     "@types/react": "18.3.12",
     "bulma": "^1.0.2",
